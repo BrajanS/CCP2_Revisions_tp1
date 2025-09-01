@@ -1,0 +1,7 @@
+.removeReviewBtn{
+    opacity: 0.5;
+}
+
+.removeReviewBtn:hover{
+    opacity: 0.8;
+}
