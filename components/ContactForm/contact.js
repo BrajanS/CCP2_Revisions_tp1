@@ -73,11 +73,3 @@ form.addEventListener("submit", (e) => {
   }
 });
 
-// Soumission du formulaire avec la touche entrée
-
-form.addEventListener("keydown", (e) => {
-  if (e.key === "Enter") {
-    e.preventDefault(); 
-    submitBtn.click(); 
-  }
-});
