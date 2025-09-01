@@ -5,12 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CCP2 - Révisions</title>
     <script src="./components/index.js" defer></script>
-    <link rel="stylesheet" href="./components/faq.css" />
+    <link rel="stylesheet" href="./styles/faq.css" />
   </head>
   <body>
     <header></header>
     <main>
       <div class="faq-container" id="faq-container"></div>
+      <template id="faq-template">
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="faq-icon">+</span>
+            <span class="faq-text"></span>
+          </button>
+          <div class="faq-answer"></div>
+        </div>
+      </template>
     </main>
     <footer></footer>
     <script src="components/faq.js"></script>

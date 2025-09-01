@@ -24,30 +24,26 @@ const faqData = [
 
 
 
+
 function createFAQ(containerId, data) {
   const container = document.getElementById(containerId);
   if (!container) return;
+  const template = document.getElementById('faq-template');
+  if (!template) return;
 
   data.forEach(item => {
-    const faqItem = document.createElement('div');
-    faqItem.className = 'faq-item';
+   
+    const faqNode = template.content.cloneNode(true);
+    const faqItem = faqNode.querySelector('.faq-item');
+    const question = faqItem.querySelector('.faq-question');
+    const icon = faqItem.querySelector('.faq-icon');
+    const text = faqItem.querySelector('.faq-text');
+    const answer = faqItem.querySelector('.faq-answer');
 
-    const question = document.createElement('button');
-    question.className = 'faq-question';
-
-    const text = document.createElement('span');
     text.textContent = item.question;
-    question.appendChild(text);
-
-    const answer = document.createElement('div');
-    answer.className = 'faq-answer';
-    answer.style.display = 'none';
     answer.textContent = item.answer;
-
-     const icon = document.createElement('span');
-    icon.className = 'faq-icon';
+    answer.style.display = 'none';
     icon.textContent = '+';
-    question.appendChild(icon);
 
     question.addEventListener('click', function() {
       const allAnswers = container.querySelectorAll('.faq-answer');
@@ -67,8 +63,6 @@ function createFAQ(containerId, data) {
       }
     });
 
-    faqItem.appendChild(question);
-    faqItem.appendChild(answer);
     container.appendChild(faqItem);
   });
 }
