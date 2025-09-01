@@ -5,10 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CCP2 - Révisions</title>
     <script src="./components/index.js" defer></script>
+    <link rel="stylesheet" href="./components/faq.css" />
   </head>
   <body>
     <header></header>
-    <main></main>
+    <main>
+      <div class="faq-container" id="faq-container"></div>
+    </main>
     <footer></footer>
+    <script src="components/faq.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        createFAQ('faq-container', faqData);
+      });
+    </script>
   </body>
 </html>
