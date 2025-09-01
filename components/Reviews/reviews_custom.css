@@ -1,0 +1,12 @@
+.removeReviewBtn{
+    opacity: 0.5;
+}
+
+.removeReviewBtn:hover{
+    opacity: 0.8;
+}
+
+.reviews_radio_container{
+    min-width: 12rem;
+    max-width: 28rem;
+}
