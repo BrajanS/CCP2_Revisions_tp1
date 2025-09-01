@@ -1,12 +1,3 @@
-// Utiliser template pour les avis
-// stocker avis dans un tableau et injecter dynamiquement au chargement
-// Lorsquʼun avis est ajouté, il est inséré en haut de la liste(début).
-// Possibilité de supprimer un avis (bouton supprimer)
-
-// PS : On fait comme si on était admin
-
-
-let current_id = 3;
 
 // Datas avis test
 let reviews = [
@@ -32,6 +23,8 @@ let reviews = [
         mark: 1
     }
 ];
+
+let current_id = reviews.length;
 
 
 // Fonction de génération des avis
@@ -77,12 +70,23 @@ function removeReviewById(id){
     updateReviews();
 }
 
-// Fonction du formulaire de création d'un avis
-// A faire.............
+// Soumission du formulaire (création d'un avis)
+const form = document.getElementById("reviewForm");
+form.addEventListener("submit", function (e) {
+    e.preventDefault();
 
+    const new_review = {
+        id: current_id,
+        user_firstname: document.getElementById("user_firstname").value,
+        user_lastname: document.getElementById("user_lastname").value,
+        commentary: document.getElementById("commentary").value,
+        mark: document.querySelector("input[name='reviewRadio']:checked").value
+    };
 
-// Fonction d'ajout d'un avis (début de liste)
-// A faire.............
+    reviews.unshift(new_review);
+    updateReviews();
+    current_id++;
+});
 
 
 

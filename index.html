@@ -17,6 +17,7 @@
             <!-- Avis des utilisateurs -->
             <section id="reviews" class="mt-4">
                 <h2> Les avis de nos clients </h2>
+
                 <!-- Template avis -->
                 <template id="review_card_template">
                     <div class="card w-100 mt-4">
@@ -79,11 +80,59 @@
                         </div>
                     </div>
                 </template>
+
                 <!-- Container pour les avis -->
                 <div id="reviews_container">
                 </div>
+
                 <!-- Mini formulaire pour ajouter avis -->
-                <!-- A FAIRE.......... -->
+                <div class="my-4">
+                    <h4 class="mb-3"> Laisser un avis </h4>
+                    <form id="reviewForm">
+                        <!-- Nom et Prénom -->
+                        <div class="mb-3 d-flex justify-content-center gap-5">
+                            <div class="w-50">
+                                <label for="user_firstname" class="form-label">Prénom</label>
+                                <input type="text" class="form-control" id="user_firstname" required>
+                            </div>
+                            <div class="w-50">
+                                <label for="user_lastname" class="form-label">Nom</label>
+                                <input type="text" class="form-control" id="user_lastname" required>
+                            </div>
+                        </div>
+                        <!-- Commentaire -->
+                        <div class="mb-3">
+                            <label for="commentary" class="form-label">Commentaire</label>
+                            <textarea class="form-control" id="commentary" rows="2" required></textarea>
+                        </div>
+                        <!-- Note -->
+                        <h6> Note</h6>
+                        <div class="w-50 mb-4 d-flex justify-content-between reviews_radio_container">
+                            <div>
+                                <input type="radio" name="reviewRadio" id="reviewScore_1" value="1">
+                                <label for="reviewScore_1">1</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="reviewRadio" id="reviewScore_2" value="2">
+                                <label for="reviewScore_2">2</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="reviewRadio" id="reviewScore_3" value="3">
+                                <label for="reviewScore_3">3</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="reviewRadio" id="reviewScore_4" value="4">
+                                <label for="reviewScore_4">4</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="reviewRadio" id="reviewScore_5" value="5">
+                                <label for="reviewScore_5">5</label>
+                            </div>
+                        </div>
+                        <button class="btn btn-outline-primary w-100" type="submit"> Envoyer </button>
+                    </form>
+                </div>
+                
             </section>
             
 
